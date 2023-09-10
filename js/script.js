@@ -3,16 +3,18 @@ const containerDiv = document.querySelector("#container");
 
 const myLibrary = [];
 
-function Book(title, author, pages, isReaded) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isReaded = isReaded;
-  this.info = function () {
+class Book {
+  constructor(title, author, pages, isReaded) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isReaded = isReaded;
+  }
+  showInfo() {
     return `${this.title} by ${this.author}, ${this.pages}, ${
       this.isReaded ? "readed" : "not read yet"
     }`;
-  };
+  }
 }
 
 function addBookToLibrary(book) {
@@ -49,15 +51,7 @@ function renderLibrary() {
       <div class="bg-slate-600 rounded-lg p-4 text-white break-words">
         <h2 class="text-2xl font-bold text-center ">${book.title}</h2>
         <hr>
-        <p class="text-lg mt-4"><span class="font-bold text-normal">Author:</span> ${
-          book.author
-        }</p>
-        <p class="text-lg"><span class="font-bold text-normal">Pages:</span> ${
-          book.pages
-        }</p>
-        <p class="text-lg"><span class="font-bold text-normal">Status:</span> ${
-          book.isReaded ? "Readed" : "Not read yet"
-        }</p>
+        <p class="text-lg mt-4"><span class="font-bold text-normal">Description:</span> ${book.showInfo()}</p>
         <button onclick="removeBook(${index})" class="bg-red-500 rounded-full w-full mt-4 shadow-md px-4 py-2">Delete book</button>
       </div>
     `;
