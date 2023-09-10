@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Books Library</title>
+  </head>
+  <body class="">
+    <div
+      class="container my-24 mx-auto shadow-lg bg-gradient-to-br from-slate-700 to-slate-900 rounded-lg"
+    >
+      <h1 class="text-5xl font-extrabold text-white text-center py-8">
+        Books Library
+      </h1>
+      <form class="flex flex-col p-4 items-center" id="book-form">
+        <div class="mb-4">
+          <label class="block text-white" for="title">Title:</label>
+          <input
+            class="bg-gray-100 border border-gray-400 rounded-lg p-1"
+            type="text"
+            name="title"
+            id="title"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-white" for="author">Author:</label>
+          <input
+            class="bg-gray-100 border border-gray-400 rounded-lg p-1"
+            type="text"
+            name="author"
+            id="author"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-white" for="pages">Pages:</label>
+          <input
+            class="bg-gray-100 border border-gray-400 rounded-lg p-1"
+            type="number"
+            name="pages"
+            id="pages"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            class="w-4 h-4 rounded"
+            type="checkbox"
+            name="is-readed"
+            id="is-readed"
+          />
+          <label class="text-white" for="isReaded">Have you read it?</label>
+        </div>
+
+        <button
+          class="rounded-full shadow-md bg-blue-900 text-white px-4 py-2"
+          type="submit"
+        >
+          NEW BOOK
+        </button>
+      </form>
+
+      <div
+        id="container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4"
+      ></div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
