@@ -3,18 +3,16 @@ const containerDiv = document.querySelector("#container");
 
 const myLibrary = [];
 
-class Book {
-  constructor(title, author, pages, isReaded) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isReaded = isReaded;
-  }
-  showInfo() {
+function Book(title, author, pages, isReaded) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.isReaded = isReaded;
+  this.showInfo = () => {
     return `${this.title} by ${this.author}, ${this.pages}, ${
       this.isReaded ? "readed" : "not read yet"
     }`;
-  }
+  };
 }
 
 function addBookToLibrary(book) {
